@@ -10,4 +10,7 @@ const mapItemKeys: KeyMapper = (key) => {
   }
 }
 
+// type of export is (Filters, ExcludeFilters, Aggregates) => ElasticQuery
 export const getItemsQuery = mapQuery(mapItemKeys);
+
+// Of course, we could validate the parameters using io-ts
