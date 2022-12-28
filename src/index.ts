@@ -1,4 +1,4 @@
-import { queryBuilder } from './items';
+import { queryItems } from './items';
 
 const paramsMock = {
   filters: {
@@ -8,6 +8,6 @@ const paramsMock = {
   aggs: ['country'],
 }
 
-const itemsQuery = queryBuilder(paramsMock.filters, paramsMock.aggs);
+const itemsQuery = queryItems(paramsMock.filters, paramsMock.aggs);
 
 console.dir(itemsQuery, { depth: null });

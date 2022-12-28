@@ -1,4 +1,4 @@
-import { createQuery, filterBy, aggregateBy } from './elastic-query'
+import { createQuery, filterBy, aggregateBy } from './elastic'
 
 type Filters = Record<string, string>
 type Aggregates = string[]
@@ -12,7 +12,7 @@ const filterMapper = (key: string, value: string) => {
   }
 }
 
-export const queryBuilder = (filters: Filters, aggs: Aggregates) => createQuery([
+export const queryItems = (filters: Filters, aggs: Aggregates) => createQuery([
   ...Object.keys(filters).map(key => filterMapper(key, filters[key])),
   ...aggs.map(field => aggregateBy(field)),
 ])
