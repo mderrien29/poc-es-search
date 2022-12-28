@@ -1,7 +1,5 @@
 import { createQuery, filterBy, aggregateBy } from './elastic'
-
-type Filters = Record<string, string>
-type Aggregates = string[]
+import { Filters, Aggregates } from './domain';
 
 const filterMapper = (key: string, value: string) => {
   switch (key) {
